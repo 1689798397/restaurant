@@ -1,0 +1,45 @@
+server:
+  port: 8081
+spring:
+  mvc:
+    throw-exception-if-no-handler-found: true
+    format:
+      date: yyyy-MM-dd HH:mm:ss
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.10.100:3307/restaurant?serverTimeZone=Asia/shangHai
+    username: root
+    password: 99.12.05mb
+  redis:
+    host: 192.168.10.100
+    port: 6379
+    password: 99.12.05mb
+    lettuce:
+      pool:
+        max-active: 8  #最大连接
+        max-idle: 8   #最大空闲连接
+        min-idle: 0   #最小空闲连接
+        max-wait: 100ms #连接等待时间
+minio:
+  endpoint: http://110.40.193.24:9000
+  access-key: jackma888
+  secret-key: jackma888
+  bucket-name: restaurant
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+knife4j:
+  enable: true
+  openapi:
+    title: "高校点餐系统接口文档"
+    description: "采用前后端分离"
+    email: xiaowenlong@qq.com
+    concat: 肖文龙
+    version: v1.0
+    group:
+      admin:
+        group-name: 全部接口
+        api-rule: package
+        api-rule-resources:
+          - com.example.controller

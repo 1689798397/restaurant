@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.RepastMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.domain.Repast">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="repastName" column="repast_name" jdbcType="VARCHAR"/>
+        <result property="price" column="price" jdbcType="DECIMAL"/>
+        <result property="info" column="info" jdbcType="VARCHAR"/>
+        <result property="imgUrl" column="img_url" jdbcType="VARCHAR"/>
+        <result property="salesStatus" column="sales_status" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,repast_name,price,
+        info,img_url,sales_status
+    </sql>
+</mapper>
